@@ -254,7 +254,7 @@ function calculateMultiJointSegments(
  * Calculate planks layout
  * Planks are VERTICAL (Y direction), spaced along X (length)
  */
-export function calculatePlanks(input: TerraceInput, beamRowCount: number): PlankResult {
+export function calculatePlanks(input: TerraceInput): PlankResult {
   const lengthMm = input.length * 10;
   const heightAMm = input.heightA * 10;
   const heightBMm = input.heightB * 10;
@@ -322,7 +322,7 @@ export function calculatePlanks(input: TerraceInput, beamRowCount: number): Plan
 export function calculateTerrace(input: TerraceInput): CalculationResult {
   const area = calculateArea(input);
   const rost = calculateRost(input);
-  const planks = calculatePlanks(input, rost.beamRows.length);
+  const planks = calculatePlanks(input);
 
   return {
     area,
